@@ -1,0 +1,73 @@
+
+
+# Provides a stable IP address and DNS name for Deployment
+apiVersion: v1
+kind: Service
+metadata:
+  name: app-three
+spec:
+  type: ClusterIP
+  clusterIP: 10.43.171.213
+  selector:
+    app: app-three
+  ports:
+  - name: http
+    port: 80
+    targetPort: 8080
+
+---
+
+# Create the Deployment Object
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app-three
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: app-three
+  template:
+    metadata:
+      labels:
+        app: app-three
+    spec:
+      containers:
+        - name: app-three
+          image: paulbouwer/hello-kubernetes:1.10
+          ports:
+          - containerPort: 8080
+          env:
+          - name: MESSAGE
+            value: Hello from the app3.
+
+---
+
+# Define reverse proxy for the app
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: app-three
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  rules:
+  - host: app3.com
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: app-three
+            port:
+              number: 80
+  - http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: app-three
+            port:
+              number: 80
