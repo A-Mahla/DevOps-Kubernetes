@@ -1,0 +1,64 @@
+
+
+# Provides a stable IP address and DNS name for Deployment
+apiVersion: v1
+kind: Service
+metadata:
+  name: app-two
+spec:
+  type: ClusterIP
+  clusterIP: 10.43.193.160
+  selector:
+    app: app-two
+  ports:
+  - name: http
+    port: 80
+    targetPort: 8080
+
+---
+
+# Create the Deployment Object
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app-two
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: app-two
+  template:
+    metadata:
+      labels:
+        app: app-two
+    spec:
+      containers:
+        - name: app-two
+          image: paulbouwer/hello-kubernetes:1.10
+          ports:
+          - containerPort: 8080
+          env:
+          - name: MESSAGE
+            value: Hello from the app2.
+
+---
+
+# Define reverse proxy for the app
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: app-two
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  rules:
+  - host: app2.com
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: app-two
+            port:
+              number: 80

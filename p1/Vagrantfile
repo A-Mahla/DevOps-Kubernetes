@@ -1,0 +1,49 @@
+Vagrant.configure("2") do |config|
+
+  config.vm.box = "bento/debian-11"
+
+# =============== 1st VM ====================
+  config.vm.define "amahlaS" do |server|
+
+# =>  VM settings
+    server.vm.hostname = "amahlaS"
+    server.vm.network "private_network", ip: "192.168.56.110"
+    server.vm.synced_folder ".", "/token", type:"virtualbox"
+    server.vm.provision "file", source: "~/.ssh/id_rsa.pub", destination: "/tmp/"
+
+# =>  Shell file on Buildtime
+    server.vm.provision "shell", privileged: true, path: "scripts/script_server.sh"
+
+# =>  Virtualization provider settings
+    server.vm.provider "virtualbox" do |vb|
+      vb.memory = "2048"
+      vb.cpus = 2
+      vb.name = "amahlaS"
+    end
+
+  end
+#  ===============================================
+#
+#  ================== 2nd VM =====================
+  config.vm.define "amahlaSW" do |agent|
+
+# =>  VM settings
+    agent.vm.hostname = "amahlaSW"
+    agent.vm.network "private_network", ip: "192.168.56.111"
+    agent.vm.synced_folder ".", "/token", type:"virtualbox"
+    agent.vm.provision "file", source: "~/.ssh/id_rsa.pub", destination: "/tmp/"
+
+# =>  Shell cmd on Buildtime
+    agent.vm.provision "shell", privileged: true, path: "scripts/script_agent.sh"
+
+# =>  Virtualization provider settings
+    agent.vm.provider "virtualbox" do |vb|
+      vb.memory = "2048"
+      vb.cpus = 2
+      vb.name = "amahlaSW"
+    end
+
+  end
+#  ===============================================
+
+end
