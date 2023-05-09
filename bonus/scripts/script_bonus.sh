@@ -27,8 +27,10 @@ sudo kubectl wait --for=condition=Ready pods --all -n monitoring
 
 # Get gitlab pass => username: root
 sudo kubectl -n gitlab get secret gitlab-gitlab-initial-root-password -o jsonpath="{.data.password}" | base64 -d && echo
-# Get gitlab pass => username: admin?
+# Get loki pass => username: admin?
 sudo kubectl get secret --namespace monitoring loki-grafana -o jsonpath="{.data.admin-password}" | base64 --decode ; echo
+# Get nextcloud pass => username: admin?
+sudo kubectl get secret --namespace nextcloud nextcloud -o jsonpath="{.data.nextcloud-password}" | base64 --decode ; echo
 
 # Deploy new dev application 
 sudo kubectl apply -n argocd -f ../confs/argocd_app.yaml
