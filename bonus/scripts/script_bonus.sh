@@ -5,7 +5,7 @@ curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scrip
 sudo chmod 700 get_helm.sh
 sudo ./get_helm.sh
 
-sudo kubectl apply -f confs/nginx.yaml
+sudo kubectl apply -f ../confs/nginx.yaml
 
 # Gitlab
 sudo helm repo add gitlab https://charts.gitlab.io/
