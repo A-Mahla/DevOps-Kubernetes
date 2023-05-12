@@ -13,6 +13,7 @@
 ## Start and provision the vagrant environment of p2
 
 ```shell
+cd p2
 vagrant up
 Bringing machine 'suchoS' up with 'virtualbox' provider...
 ==> amahlaS: Importing base box 'bento/debian-11'...
