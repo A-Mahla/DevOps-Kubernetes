@@ -8,11 +8,9 @@
 ## View diagram of p2's environment
 
 <img alt="Diagram of p2 environment" src="https://user-images.githubusercontent.com/22397481/163712753-c335cd0d-fedc-404e-b83c-f6b37a02a2ee.png">
-</details>
+
 
 ## Start and provision the vagrant environment of p2
-<details>
-<summary>Expand</summary>
 
 ```shell
 vagrant up
@@ -28,11 +26,10 @@ Bringing machine 'suchoS' up with 'virtualbox' provider...
     amahlaS: deployment.apps/app-three created
     amahlaS: ingress.networking.k8s.io/ingress-applications created
 ```
-</details>
+<
 
 ## Check created resources such as pods, services, deployments and replicas
-<details>
-<summary>Expand</summary>
+
 
 ```sh
 vagrant ssh suchoS --command "kubectl get all"
