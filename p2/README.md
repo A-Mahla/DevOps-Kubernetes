@@ -65,7 +65,7 @@ Connection to 127.0.0.1 closed.
 > <summary>app1 with one replica</summary>
 > 
 > ```shell
-> [~]$ curl -sH "Host:app1.com" 164.92.153.174 | grep app
+> [~]$ curl -sH "Host:app1.com" 192.168.56.110 | grep app
 >   Hello from app1.
 >       <td>app-one-7454877f6d-ndx7f</td>
 > ```
@@ -74,13 +74,13 @@ Connection to 127.0.0.1 closed.
 > <summary>app2 with three replicas</summary>
 > 
 > ```shell
-> [~]$ curl -sH "Host:app2.com" 164.92.153.174 | grep app
+> [~]$ curl -sH "Host:app2.com" 192.168.56.110 | grep app
 >   Hello from app2.
 >       <td>app-two-867df7fb47-tsrdt</td>
-> [~]$ curl -sH "Host:app2.com" 164.92.153.174 | grep app
+> [~]$ curl -sH "Host:app2.com" 192.168.56.110 | grep app
 >   Hello from app2.
 >       <td>app-two-867df7fb47-8rb9b</td>
-> [~]$ curl -sH "Host:app2.com" 164.92.153.174 | grep app
+> [~]$ curl -sH "Host:app2.com" 192.168.56.110 | grep app
 >   Hello from app2.
 >       <td>app-two-867df7fb47-tzk98</td>
 > ```
@@ -89,18 +89,18 @@ Connection to 127.0.0.1 closed.
 > <summary>app3 with one replica as default application</summary>
 > 
 > ```shell
-> [~]$ curl -sH "Host:app3.com" 164.92.153.174 | grep app
+> [~]$ curl -sH "Host:app3.com" 192.168.56.110 | grep app
 >   Hello from app3.
 >       <td>app-three-5467985dbb-cg2n7</td>
-> [~]$ curl -sH "Host:42.fr" 164.92.153.174 | grep app
+> [~]$ curl -sH "Host:42.fr" 192.168.56.110 | grep app
 >   Hello from app3.
 >       <td>app-three-5467985dbb-cg2n7</td>
-> [~]$ curl -s  164.92.153.174 | grep app
+> [~]$ curl -s  192.168.56.110 | grep app
 >   Hello from app3.
 >       <td>app-three-5467985dbb-cg2n7</td>
 > ```
 > </details>
 > 
-> Now, just search domain on your Browser: `app1.com`, `app2.com`, `app3.com`, `192.168.56.110' 
+> Now, just search domain on your Browser: `app1.com`, `app2.com`, `app3.com`, `192.168.56.110`
 
 
