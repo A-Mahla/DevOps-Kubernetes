@@ -41,11 +41,11 @@ pod/app-two-867df7fb47-tsrdt     1/1     Running   0          36m
 pod/app-three-5467985dbb-cg2n7   1/1     Running   0          36m
 pod/app-two-867df7fb47-tzk98     1/1     Running   0          36m
 
-NAME                 TYPE        CLUSTER-IP    EXTERNAL-IP   PORT(S)   AGE
-service/app-one      ClusterIP   10.43.0.1     <none>        80/TCP    37m
-service/app-two      ClusterIP   10.43.229.156 <none>        80/TCP    37m
-service/app-three    ClusterIP   10.43.193.160 <none>        80/TCP    37m
-service/kubernetes   ClusterIP   10.43.171.213 <none>        443/TCP   37m
+NAME                 TYPE        CLUSTER-IP     EXTERNAL-IP   PORT(S)   AGE
+service/app-one      ClusterIP   10.43.0.1      <none>        80/TCP    37m
+service/app-two      ClusterIP   10.43.229.156  <none>        80/TCP    37m
+service/app-three    ClusterIP   10.43.193.160  <none>        80/TCP    37m
+service/kubernetes   ClusterIP   10.43.171.213  <none>        443/TCP   37m
 
 NAME                        READY   UP-TO-DATE   AVAILABLE   AGE
 deployment.apps/app-one     1/1     1            1           37m
