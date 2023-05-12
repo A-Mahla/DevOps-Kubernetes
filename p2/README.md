@@ -59,34 +59,7 @@ Connection to 127.0.0.1 closed.
 ```
 </details>
 
-## View Ingress
-<details>
-<summary>Expand</summary>
-
-```shell
-vagrant ssh suchoS --command "kubectl describe ingress"
-Name:             ingress-applications
-Namespace:        default
-Address:          192.168.42.110
-Default backend:  app-three:80 (10.42.0.9:8080)
-Rules:
-  Host        Path  Backends
-  ----        ----  --------
-  app1.com
-              /   app-one:80 (10.42.0.2:8080)
-  app2.com
-              /   app-two:80 (10.42.0.11:8080,10.42.0.5:8080,10.42.0.6:8080)
-  *
-              /   app-three:80 (10.42.0.9:8080)
-Annotations:  <none>
-Events:       <none>
-Connection to 127.0.0.1 closed.
-```
-</details>
-
 ## Browse to check that the virtual machine is correctly configured
-<details>
-<summary>Using curl</summary>
 
 > <details>
 > <summary>app1 with one replica</summary>
