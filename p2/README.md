@@ -100,5 +100,6 @@ Connection to 127.0.0.1 closed.
 >       <td>app-three-5467985dbb-cg2n7</td>
 > ```
 > </details>
-</details>
 > Now, just search domain on your Browser: `app1.com`, `app2.com`, `app3.com`, `192.168.56.110' 
+</details>
+
