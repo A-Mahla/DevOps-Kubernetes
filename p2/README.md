@@ -15,7 +15,7 @@
 ```shell
 cd p2
 vagrant up
-Bringing machine 'suchoS' up with 'virtualbox' provider...
+Bringing machine 'amahlaS' up with 'virtualbox' provider...
 ==> amahlaS: Importing base box 'bento/debian-11'...
     [...]
     amahlaS: [INFO]  systemd: Starting k3s
@@ -33,7 +33,7 @@ Bringing machine 'suchoS' up with 'virtualbox' provider...
 
 
 ```sh
-vagrant ssh suchoS --command "kubectl get all"
+vagrant ssh amahlaS --command "kubectl get all"
 NAME                             READY   STATUS    RESTARTS   AGE
 pod/app-one-7454877f6d-ndx7f     1/1     Running   0          36m
 pod/app-two-867df7fb47-8rb9b     1/1     Running   0          36m
