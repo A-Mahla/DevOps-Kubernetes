@@ -3,7 +3,7 @@
 
     **Application 1** has 1 replica and is accessible if request includes a header `Host: app1.com`<br/>
     **Application 2** has 3 replicas and is accessible if request includes a header `Host: app2.com`<br/>
-    **Application 3** has 1 replica and is accessible by default or contains undefined value of request header `Host`.
+    **Application 3** has 1 replica and is accessible by default or contains undefined value of request header `Host: app3.com`.
 
 ## View diagram of p2's environment
 <details>
