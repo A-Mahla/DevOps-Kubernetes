@@ -20,7 +20,33 @@ VAGRANT_VAGRANTFILE=Vagrantfile_two vagrant ssh
 ```
 
 # K3s
-<summary>Result</summary><br/>
+
+Now, we have to install K3S on our server. To do that, we have to connect to our server machine and run the following command:
+
+    ```bash
+    curl -sfL https://get.k3s.io | sh -
+    ```
+    You can also specify some options to install K3S, by example if you want to be in server or agent mode. You can find more information about the options [here](https://docs.k3s.io/installation/configuration).
+
+    ```bash
+    export K3S_INSTALL_K3S_EXEC="--server --node-ip 192.42.42.42"
+    ```
+
+    Here you go, you have your server running K3S. You can check if it's running by running the following command:
+
+    ```bash
+    kubectl get nodes -o wide
+    ```
+
+
+- Now, we have to install K3S on our server worker. To do that, we have to connect to our server worker machine and run the following command:
+
+    ```bash
+    curl -sfL https://get.k3s.io | sh -
+    ```
+    You will have to give more informations to it, like the token of your server, I won't explain you how to get it but think about shared folders...
+
+<summary>On run time ...</summary><br/>
 
 The IP addresses are dedicated on the eth1 interface.<br/>
 The IP of the first machine (Server) is 192.168.56.110/24<br/>
@@ -31,7 +57,7 @@ VAGRANT_VAGRANTFILE=Vagrantfile vagrant up
 Bringing machine 'amahlaS' up with 'virtualbox' provider...
 Bringing machine 'amahlaSW' up with 'virtualbox' provider...
 [...]
-VAGRANT_VAGRANTFILE=Vagrantfile vagrant ssh yewenS --command "kubectl get node -o wide"
+VAGRANT_VAGRANTFILE=Vagrantfile vagrant ssh amahlaS --command "kubectl get node -o wide"
 NAME      STATUS   ROLES                  AGE   VERSION        INTERNAL-IP      EXTERNAL-IP   OS-IMAGE                KERNEL-VERSION           CONTAINER-RUNTIME
 amahlasw   Ready    <none>                 10m   v1.22.7+k3s1   192.168.56.111   <none>        Debian 11 (Core)   3.10.0-1127.el7.x86_64   containerd://1.5.9-k3s1
 amahlas    Ready    control-plane,master   15m   v1.22.7+k3s1   192.168.56.110   <none>        Debian 11 (Core)   3.10.0-1127.el7.x86_64   containerd://1.5.9-k3s1
