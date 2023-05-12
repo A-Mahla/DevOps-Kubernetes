@@ -1,9 +1,9 @@
 # Summary
-Three web applications are run in one K3s server instance and accessible depending on the `Host` used when making a request to the IP address `192.168.42.11`.
+- Three web applications are run in one K3s server instance and accessible depending on the `Host` used when making a request to the IP address `192.168.42.11`.
 
-**Application 1** has 1 replica and is accessible if request includes a header `Host: app1.com`<br/>
-**Application 2** has 3 replicas and is accessible if request includes a header `Host: app2.com`<br/>
-**Application 3** has 1 replica and is accessible by default or contains undefined value of request header `Host`.
+    **Application 1** has 1 replica and is accessible if request includes a header `Host: app1.com`<br/>
+    **Application 2** has 3 replicas and is accessible if request includes a header `Host: app2.com`<br/>
+    **Application 3** has 1 replica and is accessible by default or contains undefined value of request header `Host`.
 
 ## View diagram of p2's environment
 <details>
