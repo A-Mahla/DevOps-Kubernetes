@@ -17,16 +17,16 @@
 ```shell
 vagrant up
 Bringing machine 'suchoS' up with 'virtualbox' provider...
-==> suchoS: Importing base box 'centos/7'...
+==> amahlaS: Importing base box 'bento/debian11'...
     [...]
-    suchoS: [INFO]  systemd: Starting k3s
-    suchoS: service/app-one created
-    suchoS: deployment.apps/app-one created
-    suchoS: service/app-two created
-    suchoS: deployment.apps/app-two created
-    suchoS: service/app-three created
-    suchoS: deployment.apps/app-three created
-    suchoS: ingress.networking.k8s.io/ingress-applications created
+    amahlaS: [INFO]  systemd: Starting k3s
+    amahlaS: service/app-one created
+    amahlaS: deployment.apps/app-one created
+    amahlaS: service/app-two created
+    amahlaS: deployment.apps/app-two created
+    amahlaS: service/app-three created
+    amahlaS: deployment.apps/app-three created
+    amahlaS: ingress.networking.k8s.io/ingress-applications created
 ```
 </details>
 
