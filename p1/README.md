@@ -40,11 +40,12 @@ It is useful where a single folder may contain multiple Vagrantfiles representin
 - The IP of the second machine (ServerWorker) is 192.168.56.111/24
 
 	```shell
-	VAGRANT_VAGRANTFILE=Vagrantfile vagrant up
+	cd p1
+	vagrant up
 	Bringing machine 'amahlaS' up with 'virtualbox' provider...
 	Bringing machine 'amahlaSW' up with 'virtualbox' provider...
 	[...]
-	VAGRANT_VAGRANTFILE=Vagrantfile vagrant ssh amahlaS --command "kubectl get node -o wide"
+	vagrant ssh amahlaS --command "kubectl get node -o wide"
 	NAME      STATUS   ROLES                  AGE   VERSION        INTERNAL-IP      EXTERNAL-IP   OS-IMAGE                KERNEL-VERSION           CONTAINER-RUNTIME
 	amahlasw   Ready    <none>                 10m   v1.22.7+k3s1   192.168.56.111   <none>        Debian 11 (Core)   3.10.0-1127.el7.x86_64   containerd://1.5.9-k3s1
 	amahlas    Ready    control-plane,master   15m   v1.22.7+k3s1   192.168.56.110   <none>        Debian 11 (Core)   3.10.0-1127.el7.x86_64   containerd://1.5.9-k3s1
