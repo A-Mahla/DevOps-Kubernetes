@@ -101,5 +101,4 @@ Connection to 127.0.0.1 closed.
 > ```
 > </details>
 </details>
->
 > Now, just search domain on your Browser: `app1.com`, `app2.com`, `app3.com`, `192.168.56.110' 
