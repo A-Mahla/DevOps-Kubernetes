@@ -32,19 +32,6 @@ VAGRANT_VAGRANTFILE=Vagrantfile_two vagrant ssh
     export K3S_INSTALL_K3S_EXEC="--server --node-ip 192.42.42.42"
     ```
 
-    Here you go, you have your server running K3S. You can check if it's running by running the following command:
-
-    ```bash
-    kubectl get nodes -o wide
-    ```
-
-
-- Now, we have to install K3S on our server worker. To do that, we have to connect to our server worker machine and run the following command:
-
-    ```bash
-    curl -sfL https://get.k3s.io | sh -
-    ```
-    You will have to give more informations to it, like the token of your server, I won't explain you how to get it but think about shared folders...
 
 <summary>On run time ...</summary><br/>
 
