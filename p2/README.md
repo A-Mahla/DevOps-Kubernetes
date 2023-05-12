@@ -7,26 +7,26 @@
 
 ## View diagram of p2's environment
 
-<img alt="Diagram of p2 environment" src="https://user-images.githubusercontent.com/22397481/163712753-c335cd0d-fedc-404e-b83c-f6b37a02a2ee.png">
+   <img alt="Diagram of p2 environment" src="https://user-images.githubusercontent.com/22397481/163712753-c335cd0d-fedc-404e-b83c-f6b37a02a2ee.png">
 
 
 ## Start and provision the vagrant environment of p2
 
-```shell
-cd p2
-vagrant up
-Bringing machine 'amahlaS' up with 'virtualbox' provider...
-==> amahlaS: Importing base box 'bento/debian-11'...
-    [...]
-    amahlaS: [INFO]  systemd: Starting k3s
-    amahlaS: service/app-one created
-    amahlaS: deployment.apps/app-one created
-    amahlaS: service/app-two created
-    amahlaS: deployment.apps/app-two created
-    amahlaS: service/app-three created
-    amahlaS: deployment.apps/app-three created
-    amahlaS: ingress.networking.k8s.io/ingress-applications created
-```
+   ```shell
+   cd p2
+   vagrant up
+   Bringing machine 'amahlaS' up with 'virtualbox' provider...
+   ==> amahlaS: Importing base box 'bento/debian-11'...
+      [...]
+      amahlaS: [INFO]  systemd: Starting k3s
+      amahlaS: service/app-one created
+      amahlaS: deployment.apps/app-one created
+      amahlaS: service/app-two created
+      amahlaS: deployment.apps/app-two created
+      amahlaS: service/app-three created
+      amahlaS: deployment.apps/app-three created
+      amahlaS: ingress.networking.k8s.io/ingress-applications created
+   ```
 
 
 ## Check created resources such as pods, services, deployments and replicas
