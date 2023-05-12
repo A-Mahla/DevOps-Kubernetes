@@ -1,4 +1,4 @@
-# Summary
+# Part II
 - Three web applications are run in one K3s server instance and accessible depending on the `Host` used when making a request to the IP address `192.168.42.11`.
 
     **Application 1** has 1 replica and is accessible if request includes a header `Host: app1.com`<br/>
@@ -26,7 +26,7 @@ Bringing machine 'suchoS' up with 'virtualbox' provider...
     amahlaS: deployment.apps/app-three created
     amahlaS: ingress.networking.k8s.io/ingress-applications created
 ```
-<
+
 
 ## Check created resources such as pods, services, deployments and replicas
 
