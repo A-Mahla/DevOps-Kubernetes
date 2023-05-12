@@ -102,34 +102,7 @@ Connection to 127.0.0.1 closed.
 > </details>
 </details>
 
-<details>
+
 <summary>Using Firefox</summary>
 
-Install a plugin [ModHeader](https://addons.mozilla.org/en-US/firefox/addon/modheader-firefox/) for Firefox and add `Host` header to the request.
-> <details>
-> <summary>app1 with one replica</summary>
->
-> <img width="2048" alt="app1" src="https://user-images.githubusercontent.com/22397481/163831710-74ff5b91-9f0d-41a2-9f61-68bb89311702.png">
-> </details>
-> <details>
-> <summary>app2 with three replicas</summary>
-> 
->> <details>
->> <summary>app1 replica 1</summary>
->> <img alt="app2r1" src="https://user-images.githubusercontent.com/22397481/163832259-54143e6f-b93a-4c6a-a2ae-fa952e4b18db.png">
->> </details>
->> <details>
->> <summary>app1 replica 2</summary>
->> <img alt="app2r2" src="https://user-images.githubusercontent.com/22397481/163832274-1ec4421c-3321-43b9-bfe8-455c3ee1815d.png">
->> </details>
->> <details>
->> <summary>app1 replica 3</summary>
->> <img alt="app2r3" src="https://user-images.githubusercontent.com/22397481/163832275-45921b0e-2d4f-4769-8670-625ce935651c.png">
->> </details>
-> </details>
-> <details>
-> <summary>app3 with one replica as default application</summary>
-> <img alt="app3" src="https://user-images.githubusercontent.com/22397481/163832594-3871431d-e29e-4eb5-b662-dd1bdd005d46.png">
-> <img alt="app3default" src="https://user-images.githubusercontent.com/22397481/163832620-1bb64445-8a08-4b72-a523-cb511e412079.png">
-> </details>
-</details>
+- Just type on your Browser 
