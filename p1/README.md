@@ -21,7 +21,7 @@ VAGRANT_VAGRANTFILE=Vagrantfile_two vagrant ssh
 
 # K3s
 
-Now, we have to install K3S on our server. To do that, we have to connect to our server machine and run the following command:
+- we have to install K3S on our server. To do that, we have to connect to our server machine and run the following command:
 
     ```bash
     curl -sfL https://get.k3s.io | sh -
