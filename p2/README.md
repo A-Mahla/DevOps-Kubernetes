@@ -102,7 +102,6 @@ Connection to 127.0.0.1 closed.
 > </details>
 </details>
 
+   <summary>Using Firefox</summary>
 
-<summary>Using Firefox</summary>
-
-- Just type on your Browser 
+   Just search domain on your Browser: 'app1.com', 'app2.com', 'app3.com' 
