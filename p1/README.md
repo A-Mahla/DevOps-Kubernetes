@@ -2,7 +2,7 @@
 - The environmental variable `VAGRANT_VAGRANTFILE` allows to specify the filename of the [Vagrantfile](https://www.vagrantup.com/docs/vagrantfile) that [Vagrant](https://learn.hashicorp.com/tutorials/vagrant/getting-started-index?in=vagrant/getting-started) searches for. By default, this is "Vagrantfile".<br/>
 It is useful where a single folder may contain multiple Vagrantfiles representing different configurations. Note that this is not a file path, but just a filename. [⧉](https://www.vagrantup.com/docs/other/environmental-variables#vagrant_vagrantfile)
 
-To use a different filename, either export the variable :
+- To use a different filename, either export the variable :
  ```shell
 export VAGRANT_VAGRANTFILE=Vagrantfile_one
 vagrant up
