@@ -1,0 +1,72 @@
+########
+######## app app1, sur le domaine "app1.com"
+########
+
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: app1
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  namespace: app1
+  name: app1
+  labels:
+    app: app1
+spec:
+  type: ClusterIP
+  ports:
+  - port: 80
+    targetPort: 80
+    protocol: TCP
+    name: http
+  selector:
+    app: app1
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: app1
+  name: app1
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: app1
+  template:
+    metadata:
+      labels:
+        app: app1
+    spec:
+      containers:
+      - name: app1
+        image: gcr.io/google_containers/echoserver:1.4
+        ports:
+        - containerPort: 80
+
+
+
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  namespace: app1
+  name: app1
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+spec:
+  rules:
+  - host: app1.com
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: app1
+            port:
+              number: 80

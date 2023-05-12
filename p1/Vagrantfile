@@ -1,0 +1,42 @@
+Vagrant.configure(2) do |config|
+  config.vm.define 'master' do |master|
+    master.vm.box = 'ubuntu/jammy64'
+    master.vm.hostname = "master"
+    master.vm.synced_folder ".", "/vagrant", type:"virtualbox"
+    master.vm.network :forwarded_port, guest: 22, host: 22, id: 'ssh'
+    master.vm.network :forwarded_port, guest: 80, host: 80, id: 'http'
+    master.vm.network :forwarded_port, guest: 443, host: 443, id: 'https'
+    master.vm.network 'private_network', ip: "192.168.56.110"
+    master.vm.provision "file", source: "./.ssh/id_rsa.pub", destination: "/tmp/id_rsa.pub"
+    master.vm.provision "file", source: "./scripts/", destination: "/tmp/"
+    master.vm.provision "file", source: "./manifests/", destination: "/tmp/"
+    master.vm.provider "virtualbox" do |v|
+      v.memory = "2048"
+      v.name = "inception-of-things-master01"
+    end
+    master.vm.provision "shell", inline: <<-SHELL
+      /tmp/scripts/script_master.sh
+    SHELL
+  end
+
+  config.vm.define 'node1' do |node1|
+    node1.vm.box = 'ubuntu/jammy64'
+    node1.vm.hostname = "node1"
+    node1.vm.synced_folder ".", "/vagrant", type:"virtualbox"
+    node1.vm.network :forwarded_port, guest: 22, host: 2222, id: 'ssh'
+    node1.vm.network :forwarded_port, guest: 80, host: 81, id: 'http'
+    node1.vm.network :forwarded_port, guest: 443, host: 444, id: 'https'
+    node1.vm.network 'private_network', ip: "192.168.56.111"
+    node1.vm.provision "file", source: "./.ssh/id_rsa.pub", destination: "/tmp/id_rsa.pub"
+    node1.vm.provision "file", source: "./scripts/", destination: "/tmp/scripts"
+    node1.vm.provider "virtualbox" do |v|
+      v.memory = "2048"
+      v.name = "inception-of-things-node01"
+      end
+    node1.vm.provision "shell", inline: <<-SHELL
+      /tmp/scripts/script_node.sh
+    SHELL
+  end
+
+end
+
