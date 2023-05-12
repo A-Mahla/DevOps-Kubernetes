@@ -33,11 +33,11 @@ It is useful where a single folder may contain multiple Vagrantfiles representin
     ```
 
 
-# On run time ...
+# On run time
 
-	The IP addresses are dedicated on the eth1 interface.<br/>
-	The IP of the first machine (Server) is 192.168.56.110/24<br/>
-	The IP of the second machine (ServerWorker) is 192.168.56.111/24
+- The IP addresses are dedicated on the eth1 interface.<br/>
+- The IP of the first machine (Server) is 192.168.56.110/24<br/>
+- The IP of the second machine (ServerWorker) is 192.168.56.111/24
 
 	```shell
 	VAGRANT_VAGRANTFILE=Vagrantfile vagrant up
