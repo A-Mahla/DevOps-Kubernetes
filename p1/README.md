@@ -3,13 +3,13 @@
 It is useful where a single folder may contain multiple Vagrantfiles representing different configurations. Note that this is not a file path, but just a filename. [⧉](https://www.vagrantup.com/docs/other/environmental-variables#vagrant_vagrantfile)
 
 - To use a different filename, either export the variable :
- ```shell
-export VAGRANT_VAGRANTFILE=Vagrantfile_one
-vagrant up
-[...]
-export VAGRANT_VAGRANTFILE=Vagrantfile_two
-vagrant up
-```
+     ```shell
+     export VAGRANT_VAGRANTFILE=Vagrantfile_one
+     vagrant up
+     [...]
+     export VAGRANT_VAGRANTFILE=Vagrantfile_two
+     vagrant up
+     ```
 or set it at run time :
  ```shell
 VAGRANT_VAGRANTFILE=Vagrantfile_one vagrant up
