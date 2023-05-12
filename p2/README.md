@@ -6,8 +6,6 @@
     **Application 3** has 1 replica and is accessible by default or contains undefined value of request header `Host: app3.com`.
 
 ## View diagram of p2's environment
-<details>
-<summary>Expand</summary>
 
 <img alt="Diagram of p2 environment" src="https://user-images.githubusercontent.com/22397481/163712753-c335cd0d-fedc-404e-b83c-f6b37a02a2ee.png">
 </details>
