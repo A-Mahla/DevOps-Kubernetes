@@ -1,4 +1,5 @@
-# Vagrantfile
+#Part I
+## Vagrantfile
 - The environmental variable `VAGRANT_VAGRANTFILE` allows to specify the filename of the [Vagrantfile](https://www.vagrantup.com/docs/vagrantfile) that [Vagrant](https://learn.hashicorp.com/tutorials/vagrant/getting-started-index?in=vagrant/getting-started) searches for. By default, this is "Vagrantfile".<br/>
 It is useful where a single folder may contain multiple Vagrantfiles representing different configurations. Note that this is not a file path, but just a filename. [⧉](https://www.vagrantup.com/docs/other/environmental-variables#vagrant_vagrantfile)
 
@@ -19,7 +20,7 @@ It is useful where a single folder may contain multiple Vagrantfiles representin
 	VAGRANT_VAGRANTFILE=Vagrantfile_two vagrant ssh
 	```
 
-# K3s
+## K3s
 
 - we have to install K3S on our server. To do that, we have to connect to our server machine and run the following command:
 
@@ -33,7 +34,7 @@ It is useful where a single folder may contain multiple Vagrantfiles representin
     ```
 
 
-# On run time
+## On run time
 
 - The IP addresses are dedicated on the eth1 interface.<br/>
 - The IP of the first machine (Server) is 192.168.56.110/24<br/>
