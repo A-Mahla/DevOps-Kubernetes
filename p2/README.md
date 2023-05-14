@@ -93,9 +93,6 @@ Connection to 127.0.0.1 closed.
 > [~]$ curl -sH "Host:app3.com" 192.168.56.110 | grep app
 >   Hello from app3.
 >       <td>app-three-5467985dbb-cg2n7</td>
-> [~]$ curl -sH "Host:42.fr" 192.168.56.110 | grep app
->   Hello from app3.
->       <td>app-three-5467985dbb-cg2n7</td>
 > [~]$ curl -s  192.168.56.110 | grep app
 >   Hello from app3.
 >       <td>app-three-5467985dbb-cg2n7</td>
